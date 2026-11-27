@@ -3,9 +3,6 @@
 // Week 5 Animal Hunting Game 
 
 //Creates a MIDI sound that starts and stops after you initiate the function that activates the beep
-// import {
-//     leftNumeric
-// } from '../App.jsx'
 
 export const playBeep = () => {
     const audioCTx = new(window.AudioContext || window.wbkitAudioContext)();
@@ -18,10 +15,5 @@ export const playBeep = () => {
     gameOscillator.connect(audioCTx.destination);
     gameOscillator.start();
     gameOscillator.stop(audioCTx.currentTime + 0.14) //this determines the beep length
-    // if (leftNumeric >= 70) {
-
-    // } else {
-    //     gameOscillator.stop(audioCTx.currentTime + 0.45) //this determines the beep length
-    // }
 
 }

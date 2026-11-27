@@ -10,30 +10,38 @@ import { saveValue, getValue } from './utils/save';
 
 function App() {
   //These hooks and state management declarations set initual values for the score, round,
-  //animal potision, and animal from the array of animals
-  const animalList = ['giraffe.png', 'gorilla.png', 'tiger.png'];
+  //animal position, and animal from the array of animals
+  const animalList = ['giraffe.png', 'gorilla.png', 'tiger.png', 'trex.png'];
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(1);
   const [position, setPosition] = useState({ top: '90%', left: '0%' });
   const [animalIndex, setAnimalIndex] = useState(0);
-
+  console.log(animalIndex);
   useEffect(() => {
     localStorage.setItem("saveValue", "0");
     // The "walk" of the animal
       const interval = setInterval(() => {
       let top = Math.floor(Math.random() * 5 ) + 80 + '%';
-      let step = Math.floor(Math.random() * 4) + 3;
+      let step = Math.floor(Math.random() * 4) + 18;
       
       saveValue(step);
       let leftNumeric = parseInt(getValue(), 10);
 
       // The animal changes and the round updates when the previous animal goes to the right of the window
       if (leftNumeric === 0) {
-        setAnimalIndex((prev) => (prev + 1) % animalList.length);
-        setRound((prev) => prev + 1);
+        //Randomly select an animal from the animalList array and make sure the same one
+        //does not appear one after the other
+        setAnimalIndex((prev) => {
+          let next;
+          do {
+            next = Math.floor(Math.random() * animalList.length);
+          } while (next === prev);
+          return next;
+        });
+        setRound((prevRound) => prevRound + 1);
         setScore((score) => 0);
       }
-
+      
       setPosition({ top, left: leftNumeric + '%' });
 
     }, 1000);

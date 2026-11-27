@@ -1,56 +1,57 @@
 /* Sam Goldberg
 11/14/26
-Week 5 Animal Hunting Game */
+Week 5 Animal Hunting Game 
+The CSS styling for the Animal Hunting Game */
 
-body{
-  font-family:sans-serif;
-  background-image:url('./assets/images/background.jpg') !important; 
-  background-size:cover;
-  text-align:center;
-  user-select: none;  /* disable highlighting */
-  width:100%;
-  height: 100%;
-  margin: 0%;
-  padding: 0%;
-  overflow: hidden;
-
+body {
+    font-family: sans-serif;
+    background-image: url('./assets/images/background.jpg') !important;
+    background-size: cover;
+    text-align: center;
+    user-select: none;
+    /* disable highlighting */
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
 }
 
 h1 {
-  font-size: 5em;
-  color: rgb(240, 117, 117);
+    font-size: 5em;
+    color: rgb(240, 117, 117);
 }
 
 h2 {
-  font-size: 2em;
-  color: rgb(240, 117, 117);
+    font-size: 2em;
+    color: rgb(240, 117, 117);
 }
 
 #scoreboard {
-  background-color: rgb(107, 107, 107);
-  margin-left: 35%;
-  margin-right: 35%;
-}
-.animal{
-  position:absolute;
-  width:100px;
-  height:100px;
+    background-color: rgb(107, 107, 107);
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
-.img-animal{
-  width:100%;
+.animal {
+    position: absolute;
+    width: 100px;
+    height: 100px;
 }
 
-.img-animal:hover{
-  cursor: crosshair;
+.img-animal {
+    width: 100%;
 }
 
-.container{
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  border: none;
-  outline: none;
+.img-animal:hover {
+    cursor: crosshair;
+}
 
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    border: none;
+    outline: none;
 }
